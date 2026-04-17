@@ -1,0 +1,62 @@
+{
+    "name": "@deijose/nix-query",
+    "version": "1.3.3",
+    "description": "Query and cache utilities for Nix.js",
+    "license": "MIT",
+    "author": "Deiver Vasquez",
+    "type": "module",
+    "homepage": "https://github.com/DeijoseDevelop/nix-query",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DeijoseDevelop/nix-query.git"
+    },
+    "main": "./dist/lib/nix-query.cjs",
+    "module": "./dist/lib/nix-query.js",
+    "types": "./dist/lib/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/lib/nix-query.js",
+            "require": "./dist/lib/nix-query.cjs",
+            "types": "./dist/lib/index.d.ts"
+        }
+    },
+    "keywords": [
+        "nix-js",
+        "query",
+        "command",
+        "cqrs",
+        "cache",
+        "reactive",
+        "typescript"
+    ],
+    "files": [
+        "dist/lib",
+        "README.md",
+        "LICENSE"
+    ],
+    "sideEffects": false,
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "clean:lib": "rm -rf dist/lib",
+        "build:lib": "vite build --config vite.lib.config.ts && tsc --project tsconfig.lib.json && terser dist/lib/nix-query.js -c -m -o dist/lib/nix-query.js && terser dist/lib/nix-query.cjs -c -m -o dist/lib/nix-query.cjs",
+        "prepack": "npm run clean:lib && npm run build:lib",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run"
+    },
+    "peerDependencies": {
+        "@deijose/nix-js": ">=2.2.2 <3"
+    },
+    "devDependencies": {
+        "@deijose/nix-js": "^2.2.2",
+        "happy-dom": "^20.8.3",
+        "terser": "^5.46.0",
+        "typescript": "~5.9.3",
+        "vite": "^8.0.0",
+        "vitest": "^4.0.18"
+    }
+}
