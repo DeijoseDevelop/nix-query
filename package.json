@@ -1,6 +1,6 @@
 {
     "name": "@deijose/nix-query",
-    "version": "1.3.4",
+    "version": "1.3.5",
     "description": "Query and cache utilities for Nix.js",
     "license": "MIT",
     "author": "Deiver Vasquez",
@@ -52,7 +52,7 @@
         "@deijose/nix-js": ">=2.3.0 <3"
     },
     "devDependencies": {
-        "@deijose/nix-js": "^2.3.0",
+        "@deijose/nix-js": "^2.5.1",
         "happy-dom": "^20.8.3",
         "terser": "^5.46.0",
         "typescript": "~5.9.3",
